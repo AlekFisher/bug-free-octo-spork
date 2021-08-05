@@ -1,12 +1,23 @@
 ---
-title: "Import Data"
+title: "Phil & Alek Awesome Adventure"
 output: html_notebook
 ---
+
+
+```{r message = FALSE, warning = FALSE}
+
+library(tidyverse)
+library(readxl)
+library(plotly)
+
+```
+
+
 
 This is my import procedure.
 
 ```{r}
-library(readxl)
+
 url <- "https://github.com/philbowsher/Foundation-of-the-R-Workflow-workshop-2019-09-06/raw/master/Examples/data/ad_treatment.xlsx"
 destfile <- "ad_treatment.xlsx"
 curl::curl_download(url, destfile)
@@ -18,8 +29,6 @@ ad_treatment
 This is my awesome data Viz
 
 ```{r}
-library(tidyverse)
-library(plotly)
 
 p<-ad_treatment %>%
   group_by(drug_treatment) %>% 
