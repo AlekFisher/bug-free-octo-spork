@@ -4,43 +4,6 @@ output: html_notebook
 ---
 
 
-```{r message = FALSE, warning = FALSE}
-
-library(tidyverse)
-library(readxl)
-library(plotly)
-
-```
-
-
-
-This is my import procedure.
-
-```{r}
-
-url <- "https://github.com/philbowsher/Foundation-of-the-R-Workflow-workshop-2019-09-06/raw/master/Examples/data/ad_treatment.xlsx"
-destfile <- "ad_treatment.xlsx"
-curl::curl_download(url, destfile)
-ad_treatment <- read_excel(destfile)
-ad_treatment
-```
-
-
-This is my awesome data Viz
-
-```{r}
-
-p<-ad_treatment %>%
-  group_by(drug_treatment) %>% 
-  summarize(mmse = mean(mmse)) %>% 
-  ungroup() %>% 
-  ggplot(aes(x=drug_treatment, y = mmse)) +
-  geom_col()+
-  theme_classic()
-
-plotly::ggplotly(p)
-```
-
 ```{r}
 library(dygraphs)
 dygraph(nhtemp, main = "New Haven Temperatures") %>% 
