@@ -28,7 +28,7 @@ p<-ad_treatment %>%
   ggplot(aes(x=drug_treatment, y = mmse)) +
   geom_col()+
   coord_flip() +
-  theme_minimal()
+  theme_classic()
 
 plotly::ggplotly(p)
 ```
