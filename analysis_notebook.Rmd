@@ -1,5 +1,5 @@
 ---
-title: "Phil & Alek Awesome Adventure"
+title: "Phil & Alek Awesome Adventure Wild"
 output: html_notebook
 ---
 
@@ -36,7 +36,6 @@ p<-ad_treatment %>%
   ungroup() %>% 
   ggplot(aes(x=drug_treatment, y = mmse)) +
   geom_col()+
-  coord_flip() +
   theme_classic()
 
 plotly::ggplotly(p)
